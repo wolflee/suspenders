@@ -1,10 +1,13 @@
-gem 'thin'
 gem 'high_voltage'
 gem 'paperclip'
-gem 'formtastic'
-gem 'flutie'
-gem 'bourbon'
-gem 'airbrake'
+gem 'simple_form'
+gem 'thin'
+
+group :assets, :development do
+  gem 'bourbon'
+  gem 'neat'
+  gem 'flutie'
+end
 
 group :development do
   gem 'foreman'
@@ -13,18 +16,17 @@ end
 group :development, :test do
   gem 'guard'
   gem 'guard-spork'
+  gem 'pry-rails'
   gem 'rspec-rails'
-  gem 'sham_rack'
 end
 
 group :test do
+  gem 'bourne'
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'bourne'
-  gem 'database_cleaner'
-  gem 'timecop'
-  gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'timecop'
 end
 
 group :staging, :production do
