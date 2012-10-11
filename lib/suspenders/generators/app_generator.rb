@@ -21,6 +21,9 @@ module Suspenders
     class_option :webkit, :type => :boolean, :aliases => '-W', :default => true,
       :desc => 'Add the Capybara Webkit Javascript integration testing library'
 
+    class_option :backbone, :type => :boolean, :aliases => '-B', :default => false,
+      :desc => 'Add Backbone.js supporting gems'
+
     def finish_template
       invoke :suspenders_customization
       super
@@ -91,6 +94,10 @@ module Suspenders
 
       if options[:webkit]
         build :add_capybara_webkit_gem
+      end
+
+      if options[:backbone]
+        build :add_backbone_support_gems
       end
 
       bundle_command 'install'

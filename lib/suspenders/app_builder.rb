@@ -89,6 +89,21 @@ module Suspenders
         :after => /gem 'capybara'/
     end
 
+    def add_backbone_support_gems
+      backbone_gems = <<-EOS.strip_heredoc
+        \ngem 'active_model_serializers'
+        gem 'backbone-support'
+        gem 'ejs'
+
+        group :development, :test do
+          gem 'guard-jasmine'
+          gem 'jasminerice'
+        end
+      EOS
+
+      inject_into_file 'Gemfile', backbone_gems, :after => /gem 'jquery-rails'/
+    end
+
     def configure_rspec
       generators_config = <<-RUBY
     config.generators do |generate|
