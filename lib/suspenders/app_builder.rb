@@ -71,6 +71,20 @@ module Suspenders
         :after => 'config.action_mailer.raise_delivery_errors = false'
     end
 
+    def setup_asset_host
+      replace_in_file 'config/environments/production.rb',
+        '# config.action_controller.asset_host = "http://assets.example.com"',
+        "config.action_controller.asset_host = ENV['ASSET_HOST']"
+
+      replace_in_file 'config/environments/production.rb',
+        "config.assets.version = '1.0'",
+        "config.assets.version = ENV['ASSETS_VERSION']"
+
+      replace_in_file 'config/environments/production.rb',
+        'config.serve_static_assets = false',
+        'config.static_cache_control = "public, max-age=#{1.year.to_i}"'
+    end
+
     def setup_staging_environment
       run 'cp config/environments/production.rb config/environments/staging.rb'
 

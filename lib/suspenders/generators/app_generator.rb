@@ -85,6 +85,7 @@ module Suspenders
     def setup_production_environment
       say 'Setting up the production environment'
       build :configure_smtp
+      build :setup_asset_host
     end
 
     def setup_staging_environment
