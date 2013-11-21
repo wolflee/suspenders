@@ -66,6 +66,7 @@ module Suspenders
     def test_factories_first
       copy_file 'factories_spec.rb', 'spec/models/factories_spec.rb'
       append_file 'Rakefile', factories_spec_rake_task
+      append_file 'Rakefile', dev_prime_rake_task
     end
 
     def configure_smtp
@@ -289,6 +290,10 @@ module Suspenders
 
     def factories_spec_rake_task
       IO.read find_in_source_paths('factories_spec_rake_task.rb')
+    end
+
+    def dev_prime_rake_task
+      IO.read find_in_source_paths('dev_prime_rake_task.rb')
     end
   end
 end
