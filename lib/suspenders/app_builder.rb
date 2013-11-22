@@ -39,7 +39,7 @@ module Suspenders
     end
 
     def provide_dev_prime_task
-      copy_file 'development_seeds.rake', 'lib/tasks/development_seeds.rake'
+      copy_file 'development_seeds.rb', 'lib/tasks/development_seeds.rake'
     end
 
     def configure_generators
@@ -66,7 +66,6 @@ module Suspenders
     def test_factories_first
       copy_file 'factories_spec.rb', 'spec/models/factories_spec.rb'
       append_file 'Rakefile', factories_spec_rake_task
-      append_file 'Rakefile', dev_prime_rake_task
     end
 
     def configure_smtp
@@ -107,7 +106,7 @@ module Suspenders
     def create_application_layout
       template 'suspenders_layout.html.erb.erb',
         'app/views/layouts/application.html.erb',
-        :force => true
+        force: true
     end
 
     def remove_turbolinks
@@ -122,7 +121,7 @@ module Suspenders
 
     def use_postgres_config_template
       template 'postgresql_database.yml.erb', 'config/database.yml',
-        :force => true
+        force: true
     end
 
     def create_database
@@ -290,10 +289,6 @@ module Suspenders
 
     def factories_spec_rake_task
       IO.read find_in_source_paths('factories_spec_rake_task.rb')
-    end
-
-    def dev_prime_rake_task
-      IO.read find_in_source_paths('dev_prime_rake_task.rb')
     end
   end
 end
