@@ -2,7 +2,7 @@
 
 Suspenders is the base Rails application used at [thoughtbot](http://thoughtbot.com/community).
 
-  ![Suspenders boy](http://media.tumblr.com/1TEAMALpseh5xzf0Jt6bcwSMo1_400.png)
+  The original ugly boy creeps me, had to get rid of it.
 
 Installation
 ------------
@@ -29,22 +29,22 @@ which will be appended to the default generated projectname/Gemfile.
 
 It includes application gems like:
 
-* [Airbrake](https://github.com/airbrake/airbrake) for exception notification
-* [Bourbon](https://github.com/thoughtbot/bourbon) for Sass mixins
+* [Airbrake](https://github.com/airbrake/airbrake) for exception notification ?
+* [Bourbon](https://github.com/thoughtbot/bourbon) for Sass mixins  -> campass (along with other gem)
 * [Delayed Job](https://github.com/collectiveidea/delayed_job) for background
   processing
-* [Email Validator](https://github.com/balexand/email_validator) for email
+* [Email Validator](https://github.com/balexand/email_validator) for email  need investiage
   validation
-* [Flutie](https://github.com/thoughtbot/flutie) for `page_title` and
-  `body_class` view helpers
-* [High Voltage](https://github.com/thoughtbot/high_voltage) for static pages
+* [Flutie](https://github.com/thoughtbot/flutie) for `page_title` and 
+  `body_class` view helpers    sounds good
+* [High Voltage](https://github.com/thoughtbot/high_voltage) for static pages  need investiage
 * [jQuery Rails](https://github.com/rails/jquery-rails) for jQuery
-* [Neat](https://github.com/thoughtbot/neat) for semantic grids
+* [Neat](https://github.com/thoughtbot/neat) for semantic grids  -> foundation
 * [Postgres](https://github.com/ged/ruby-pg) for access to the Postgres database
 * [Rack Timeout](https://github.com/kch/rack-timeout) to abort requests that are
-  taking too long
+  taking too long         ---
 * [Recipient Interceptor](https://github.com/croaky/recipient_interceptor) to
-  avoid accidentally sending emails to real people from staging
+  avoid accidentally sending emails to real people from staging   sounds good
 * [Simple Form](https://github.com/plataformatec/simple_form) for form markup
   and style
 * [Unicorn](https://github.com/defunkt/unicorn) to serve HTTP requests
@@ -60,12 +60,13 @@ And testing gems like:
 * [Capybara](https://github.com/jnicklas/capybara) and
   [Capybara Webkit](https://github.com/thoughtbot/capybara-webkit) for
   integration testing
-* [Factory Girl](https://github.com/thoughtbot/factory_girl) for test data
+* [Factory Girl](https://github.com/thoughtbot/factory_girl) for test data   -> Fabrication
 * [RSpec](https://github.com/rspec/rspec) for unit testing
 * [RSpec Mocks](https://github.com/rspec/rspec-mocks) for stubbing and spying
 * [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers) for common
   RSpec matchers
 * [Timecop](https://github.com/jtrupiano/timecop-console) for testing time
+* [Cucumber](#)  for integration testing
 
 Other goodies
 -------------
